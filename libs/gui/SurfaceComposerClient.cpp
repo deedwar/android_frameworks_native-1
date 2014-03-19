@@ -617,11 +617,18 @@ void SurfaceComposerClient::unblankDisplay(const sp<IBinder>& token) {
     ComposerService::getComposerService()->unblank(token);
 }
 
-#if defined(TOROPLUS_RADIO)
-status_t SurfaceComposerClient::getDisplayInfo(
-        int32_t displayId, DisplayInfo* info)
-{
-    return getDisplayInfo(getBuiltInDisplay(displayId), info);
+#ifdef LEGACY_BLOB_COMPATIBLE
+ssize_t SurfaceComposerClient::getDisplayWidth(int32_t displayId) {
+    DisplayInfo info;
+    getDisplayInfo(getBuiltInDisplay(displayId), &info);
+    return info.w;
+}
+#endif
+
+ssize_t SurfaceComposerClient::getDisplayHeight(int32_t displayId) {
+    DisplayInfo info;
+    getDisplayInfo(getBuiltInDisplay(displayId), &info);
+    return info.h;
 }
 #endif
 
