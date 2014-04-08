@@ -630,7 +630,7 @@ ssize_t SurfaceComposerClient::getDisplayHeight(int32_t displayId) {
     getDisplayInfo(getBuiltInDisplay(displayId), &info);
     return info.h;
 }
-#endif
+
 
 // ----------------------------------------------------------------------------
 
