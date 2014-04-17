@@ -623,15 +623,15 @@ ssize_t SurfaceComposerClient::getDisplayWidth(int32_t displayId) {
     getDisplayInfo(getBuiltInDisplay(displayId), &info);
     return info.w;
 }
-#endif
+
 
 ssize_t SurfaceComposerClient::getDisplayHeight(int32_t displayId) {
     DisplayInfo info;
     getDisplayInfo(getBuiltInDisplay(displayId), &info);
     return info.h;
 }
-#endif
 
+#endif
 // ----------------------------------------------------------------------------
 
 #ifndef FORCE_SCREENSHOT_CPU_PATH
